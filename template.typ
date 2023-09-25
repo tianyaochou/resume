@@ -31,7 +31,7 @@
   )
 
   // Main body.
-  set par(justify: true)
+  set par(justify: true, leading: 0.5em)
 
   body
 }

@@ -14,9 +14,11 @@
   end: "Jul, 2021"
 )[
   BEng. Computer Science and Technology\
+[% IF research %]
   GPA: 3.33/4.3\
   Rank: 129/253\
   Thesis: A Parser Test Framework Based on ANTLR
+[% END %]
 ]
 #datedItem(
   item: "Aarhus University",
@@ -27,7 +29,9 @@
   GPA: 9.33/12
   - Logic, Semantics and Verification
   - Programming Languages and Software Security
+[% IF research %]
   Thesis: Contextual Refinement and Nondeterminism
+[% END %]
 ]
 
 #section(icon: "icons/user-group-solid.svg")[Experiences]
@@ -38,7 +42,7 @@
   end: "Aug, 2020"
 )[
   Internship working on an in-house programming language
-  - Fix many bugs in various parts in the compiler
+  - Fixed many bugs in various parts in the compiler
   - Algorithm for checking mutability of variables
 ]
 #datedItem(
@@ -56,11 +60,7 @@
 #section(icon: "icons/trophy-solid.svg")[Awards]
 #datedItem(
   item: "Excellent Student Award",
-  start: "Sep, 2017"
-)[]
-#datedItem(
-  item: "Excellent Student Award",
-  start: "Sep, 2019"
+  start: "Sep, 2017 & Sep, 2019"
 )[]
 #datedItem(
   item: "Tuition Waiver",
@@ -84,9 +84,9 @@
 
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #strong("Programming Languages")\
-Coq, Haskell, OCaml, C, C++, Lisp, Rust, Python, Java, Javascript, Ruby and more (#link( "https://www.codewars.com/users/tianyaochou")[CodeWars Profile])
+Coq, Haskell, OCaml, C, C++, Lisp, Rust, Python, Java, Javascript, Ruby and more
 
-#strong("Frameworks")
+#strong("Frameworks")\
 Ruby on Rails, Vue.js
 
 #strong("Tools")\

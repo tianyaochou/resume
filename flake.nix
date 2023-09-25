@@ -13,14 +13,14 @@
           resumeBase = { config ? [ "software" "web" ] }:
             let
               configStr = builtins.concatStringsSep " "
-                (builtins.map (f: f + "=true") config);
+                (builtins.map (f: "--define " + f + "=true") config);
             in pkgs.stdenv.mkDerivation {
               name = "resume";
               buildInputs = [ pkgs.typst pkgs.perlPackages.TemplateToolkit ];
               src = ./.;
               buildPhase = ''
                 export TYPST_FONT_PATHS=${fontPaths}
-                tpage --define ${configStr} main.typ > resume.typ
+                tpage ${configStr} main.typ > resume.typ
                 typst compile resume.typ resume.pdf
               '';
               installPhase = ''

@@ -6,6 +6,11 @@
   set document(author: name, title: name)
   set page(margin: (top: 4em, bottom: 4em, left: 4em, right: 4em))
   set text(font: "Iosevka", lang: "en")
+  set underline(offset: 1pt)
+  show link: it => {
+    set text (fill: blue)
+    underline(offset: 2pt, stroke: blue, it)
+  }
 
   // Title row.
   align(center)[

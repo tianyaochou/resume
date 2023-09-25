@@ -36,64 +36,58 @@
   subitem: "Huawei, Hangzhou",
   start: "Jul, 2020",
   end: "Aug, 2020"
-)[]
+)[
+  Internship working on an in-house programming language
+  - Fix many bugs in various parts in the compiler
+  - Algorithm for checking mutability of variables
+]
 #datedItem(
   item: "Compiler Engineer",
   subitem: "Huawei, Hangzhou",
   start: "Mar, 2021",
   end: "Jul, 2021"
-)[]
+)[
+  Internship working on an in-house programming language
+  - Found and fixed various bugs in the parser as by-product of bachelor's thesis
+  - Optimized AST traversing algorithm
+  - Automated the release of language specification using Pandoc
+]
 
 #section(icon: "icons/trophy-solid.svg")[Awards]
-/*#datedItem(
+#datedItem(
   item: "Excellent Student Award",
   start: "Sep, 2017"
-)[]*/
-/*#datedItem(
+)[]
+#datedItem(
   item: "Excellent Student Award",
   start: "Sep, 2019"
-)[]*/
+)[]
 #datedItem(
   item: "Tuition Waiver",
   start: "Jul, 2022",
 )[]
 
 #section(icon: "icons/folder-open-solid.svg")[Projects]
-#datedItem(
-  item: "MIPS CPU",
-  subitem: "FPGA, CHISEL",
-)[
-  - Memory-mapped VGA Video Output
-]
-#datedItem(
-  item: "Pipelined RISC-V CPU",
-  subitem: "FPGA, Verilog",
-)[
-  - 1 Level Cache
-  - Branch Prediction
-]
-#datedItem(
-  item: "Search Engine",
-  subitem: "Rust",
-)[
-  - Pipelined and Parallel Indexer
-  - TF-IDF & Boolean Search
-]
-#datedItem(
-  item: "Formalisation of Lambda Calculus with Channel",
-  subitem: "Coq",
-)[]
 
-#datedItem(
-  item: "Verification of Auction Smart Contract",
-  subitem: "Coq"
-)[
-  - Joint Work with Andreas Stenbæk Larsen
-]
+[% IF research %]
+#include "projects/research.typ"
+[% END %]
+[% IF web %]
+#include "projects/web.typ"
+[% END %]
+[% IF software %]
+#include "projects/software.typ"
+[% END %]
+[% IF hardware %]
+#include "projects/hardware.typ"
+[% END %]
 
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #strong("Programming Languages")\
-Coq, Haskell, C++, Rust, Python
+Coq, Haskell, OCaml, C, C++, Lisp, Rust, Python, Java, Javascript, Ruby and more (#link( "https://www.codewars.com/users/tianyaochou")[CodeWars Profile])
+
+#strong("Frameworks")
+Ruby on Rails, Vue.js
 
 #strong("Tools")\
-Nix, Coq
+Linux, Nix, Coq, Pandoc, LLVM, Git, SQL Databases, Docker, Redis

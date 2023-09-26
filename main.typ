@@ -9,18 +9,6 @@
 
 #section(icon: "icons/graduation-cap-solid.svg")[Education]
 #datedItem(
-  item: "University of Science and Technology of China(USTC)",
-  start: "Sep, 2017",
-  end: "Jul, 2021"
-)[
-  BEng. Computer Science and Technology\
-[% IF research %]
-  GPA: 3.33/4.3\
-  Rank: 129/253\
-  Thesis: A Parser Test Framework Based on ANTLR
-[% END %]
-]
-#datedItem(
   item: "Aarhus University",
   start: "Sep, 2021",
   end: "Jul, 2023"
@@ -31,6 +19,18 @@
   - Programming Languages and Software Security
 [% IF research %]
   Thesis: Contextual Refinement and Nondeterminism
+[% END %]
+]
+#datedItem(
+  item: "University of Science and Technology of China(USTC)",
+  start: "Sep, 2017",
+  end: "Jul, 2021"
+)[
+  BEng. Computer Science and Technology\
+[% IF research %]
+  GPA: 3.33/4.3\
+  Rank: 129/253\
+  Thesis: A Parser Test Framework Based on ANTLR
 [% END %]
 ]
 

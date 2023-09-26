@@ -8,8 +8,13 @@
         [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
       perSystem = { pkgs, ... }: {
         packages = let
-          fonts = [ pkgs.iosevka ];
-          fontPaths = builtins.concatStringsSep ":" fonts;
+          fonts = [
+            (pkgs.iosevka-bin.override { variant = "etoile"; })
+            (pkgs.iosevka-bin.override { variant = "slab"; })
+            (pkgs.iosevka-bin.override { variant = "aile"; })
+            pkgs.iosevka
+          ];
+          fontPaths = builtins.concatStringsSep " " (builtins.map (f: "--font-path " + f) fonts);
           resumeBase = { config ? [ "software" ] }:
             let
               configStr = builtins.concatStringsSep " "
@@ -19,9 +24,8 @@
               buildInputs = [ pkgs.typst pkgs.perlPackages.TemplateToolkit ];
               src = ./.;
               buildPhase = ''
-                export TYPST_FONT_PATHS=${fontPaths}
                 tpage ${configStr} main.typ > resume.typ
-                typst compile resume.typ resume.pdf
+                typst compile ${fontPaths} resume.typ resume.pdf
               '';
               installPhase = ''
                 mkdir $out

@@ -5,7 +5,8 @@
   // Set the document's basic properties.
   set document(author: name, title: name)
   set page(margin: (top: 4em, bottom: 4em, left: 4em, right: 4em))
-  set text(font: "Iosevka", lang: "en")
+  set text(font: "Iosevka", weight: "light", size: 10pt, lang: "en")
+  show strong: set text(font: "Iosevka Slab")
   set underline(offset: 1pt)
   show link: it => {
     set text (fill: blue)
@@ -14,7 +15,7 @@
 
   // Title row.
   align(center)[
-    #block(text(weight: 700, 1.75em, name))
+    #block(strong(text(weight: "light", 1.75em, name)))
   ]
 
   // Author information.
@@ -37,11 +38,12 @@
 }
 
 #let section(icon: "", body) = {
+  show strong: set text(size: 11pt)
   stack(
     if icon == "" {
-      smallcaps(body)
+      strong(body)
     } else {
-      [#box(image(icon, height: 1em, width: 1.2em, fit: "contain"), baseline: 0.15em) #smallcaps(body)]
+      [#box(image(icon, height: 1em, width: 1.2em, fit: "contain"), baseline: 0.15em) #strong(body)]
     },
     v(0.5em),
     line(length: 100%)

@@ -10,7 +10,7 @@
         packages = let
           fonts = [ pkgs.iosevka ];
           fontPaths = builtins.concatStringsSep ":" fonts;
-          resumeBase = { config ? [ "software" "web" ] }:
+          resumeBase = { config ? [ "software" ] }:
             let
               configStr = builtins.concatStringsSep " "
                 (builtins.map (f: "--define " + f + "=true") config);
@@ -31,6 +31,7 @@
         in {
           default = resumeBase { };
           resumeAcademic = resumeBase { config = [ "research" ]; };
+          resumeDevOps = resumeBase { config = [ "software" "devops" ]; };
         };
       };
     };

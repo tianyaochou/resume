@@ -43,7 +43,7 @@
 )[
   Internship working on an in-house programming language
   - Fixed many bugs in various parts in the compiler
-  - Algorithm for checking mutability of variables
+  - Implemented algorithm for checking mutability of variables
 ]
 #datedItem(
   item: "Compiler Engineer",
@@ -69,6 +69,9 @@
 
 #section(icon: "icons/folder-open-solid.svg")[Projects]
 
+[% IF devops %]
+#include "projects/devops.typ"
+[% END %]
 [% IF research %]
 #include "projects/research.typ"
 [% END %]
@@ -90,4 +93,4 @@ Coq, Haskell, OCaml, C, C++, Lisp, Rust, Python, Java, Javascript, Ruby and more
 Ruby on Rails, Vue.js
 
 #strong("Tools")\
-Linux, Nix, Coq, Pandoc, LLVM, Git, SQL Databases, Docker, Redis
+Linux, Nix, Coq, Pandoc, LLVM, Git, SQL Databases, Docker, Redis, Make, Bash, CMake

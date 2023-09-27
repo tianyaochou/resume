@@ -50,11 +50,16 @@
   )
 }
 
-#let datedItem(item: "", subitem: "", start: "", end: "", body) = {
-  let itemElement = if subitem == "" {
+#let datedItem(item: "", subitem: "", start: "", end: "", url: "", body) = {
+  let mainItem = if url == "" {
     [#strong(item)]
   } else {
-    [#strong(item), #subitem]
+    [#link(url)[#strong(item)]]
+  }
+  let itemElement = if subitem == "" {
+    mainItem
+  } else {
+    [#mainItem, #subitem]
   }
   let period = if end == "" {
     start

@@ -18,6 +18,7 @@
 #datedItem(
   item: "Search Engine",
   subitem: "Rust",
+  url: "https://github.com/tianyaochou/search-engine-rs"
 )[
   - Pipelined and parallel indexer
   - TF-IDF & boolean search

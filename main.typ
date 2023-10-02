@@ -38,16 +38,6 @@
 #datedItem(
   item: "Compiler Engineer",
   subitem: "Huawei, Hangzhou",
-  start: "Jul, 2020",
-  end: "Aug, 2020"
-)[
-  Internship working on an in-house programming language
-  - Fixed many bugs in various parts in the compiler
-  - Implemented algorithm for checking mutability of variables
-]
-#datedItem(
-  item: "Compiler Engineer",
-  subitem: "Huawei, Hangzhou",
   start: "Mar, 2021",
   end: "Jul, 2021"
 )[
@@ -56,15 +46,25 @@
   - Optimized AST traversing algorithm
   - Automated the release of language specification using Pandoc
 ]
+#datedItem(
+  item: "Compiler Engineer",
+  subitem: "Huawei, Hangzhou",
+  start: "Jul, 2020",
+  end: "Aug, 2020"
+)[
+  Internship working on an in-house programming language
+  - Fixed many bugs in various parts in the compiler
+  - Implemented algorithm for checking mutability of variables
+]
 
 #section(icon: "icons/trophy-solid.svg")[Awards]
 #datedItem(
-  item: "Excellent Student Award",
-  start: "Sep, 2017 & Sep, 2019"
-)[]
-#datedItem(
   item: "Tuition Waiver",
   start: "Jul, 2022",
+)[]
+#datedItem(
+  item: "Excellent Student Award",
+  start: "Sep, 2017 & Sep, 2019"
 )[]
 
 #section(icon: "icons/folder-open-solid.svg")[Projects]

@@ -4,7 +4,8 @@
   name: "Tianyao Zhou",
   email: "hi@tianyao.ch",
   phone: "+4555224841",
-  github: "tianyaochou"
+  github: "tianyaochou",
+  linkedin: "tianyaochou"
 )
 
 #section(icon: "icons/graduation-cap-solid.svg")[Education]
@@ -87,7 +88,9 @@
 
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #strong("Programming Languages")\
-Coq, Haskell, OCaml, C, C++, Lisp, Rust, Python, Java, Javascript, Ruby and more
+Proficient: C, C++, Python, Coq \
+Extensive Use: Haskell, Rust, Javascript, Ruby, Assembly \
+Used: OCaml, Lisp, Java, Scala
 
 #strong("Frameworks")\
 Ruby on Rails, Vue.js

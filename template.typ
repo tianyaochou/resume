@@ -1,7 +1,7 @@
 // The project function defines how your document looks.
 // It takes your content and some metadata and formats it.
 // Go ahead and customize it to your liking!
-#let resume(name: "Your Name", email: "hi@example.com", phone: "", github: "", body) = {
+#let resume(name: "Your Name", email: "hi@example.com", phone: "", github: "", linkedin: "", body) = {
   // Set the document's basic properties.
   set document(author: name, title: name)
   set page(margin: (top: 4em, bottom: 4em, left: 4em, right: 4em))
@@ -26,7 +26,8 @@
       align(center)[
         #box(image("icons/envelope-solid.svg", width: 0.9em), baseline: 0.1em) #link("mailto:" + email)[#email] $dot$
         #box(image("icons/phone-solid.svg", width: 0.9em), baseline: 0.1em) #phone $dot$
-        #box(image("icons/github.svg", width: 0.9em), baseline: 0.1em) #link("https://github.com/" + github)[#github]
+        #box(image("icons/github.svg", width: 0.9em), baseline: 0.1em) #link("https://github.com/" + github)[#github] $dot$
+        #box(image("icons/linkedin.svg", width: 0.9em), baseline: 0.175em) #link("https://www.linkedin.com/in/" + linkedin)[#linkedin]
       ],
     ),
   )

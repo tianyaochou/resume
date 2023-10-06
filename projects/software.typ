@@ -23,3 +23,11 @@
   - Pipelined and parallel indexer
   - TF-IDF semantic & boolean search
 ]
+#datedItem(
+  item: "A Parser Testing Framework Based on ANTLR",
+  subitem: "C++"
+)[
+  Bachelor's thesis
+  - Differential testing on hand-crafted parser
+  - Customizable test case generation
+]

@@ -33,7 +33,7 @@
               '';
             };
         in {
-          default = resumeBase { };
+          default = resumeBase { config = [ "all" ]; };
           resumeAcademic = resumeBase { config = [ "research" ]; };
           resumeDevOps = resumeBase { config = [ "software" "devops" ]; };
         };

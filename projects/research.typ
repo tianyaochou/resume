@@ -1,14 +1,6 @@
 #import "../template.typ" : *
 
 #datedItem(
-  item: "A Parser Testing Framework Based on ANTLR",
-  subitem: "C++"
-)[
-  Bachelor's thesis
-  - Differential testing on hand-crafted parser
-  - Customizable test case generation
-]
-#datedItem(
   item: "Formalisation of Simply-Typed Lambda Calculus with Channel",
   subitem: "Coq",
 )[

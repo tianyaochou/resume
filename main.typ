@@ -8,17 +8,21 @@
   linkedin: "tianyaochou"
 )
 
+#section(icon: "icons/user-solid.svg")[About Me]
+I am a software engineer with good analytical and problem-solving skills. Besides, I excel in a collaborative team environment. I am also enthusiastic about continuous learning and always ready for challenges and satisfying the needs of the end users. Security is also a basic concern of mine to consider when developing software.
+
 #section(icon: "icons/graduation-cap-solid.svg")[Education]
 #datedItem(
   item: "Aarhus University",
   start: "Sep, 2021",
   end: "Jul, 2023"
 )[
-  MSc. Computer Science\
-  GPA: 9.33/12
+  MSc. Computer Science \
+  GPA: 9.33/12 \
+  Specialization:
   - Logic, Semantics and Verification
   - Programming Languages and Software Security
-[% IF research %]
+[% IF research || all %]
   Thesis: Contextual Refinement and Nondeterminism
 [% END %]
 ]
@@ -28,7 +32,7 @@
   end: "Jul, 2021"
 )[
   BEng. Computer Science and Technology\
-[% IF research %]
+[% IF research || all %]
   GPA: 3.33/4.3\
   Rank: 129/253\
   Thesis: A Parser Test Framework Based on ANTLR
@@ -43,7 +47,7 @@
   end: "Jul, 2021"
 )[
   Internship working on an in-house programming language
-  - Found and fixed various bugs in the parser as by-product of bachelor's thesis
+  - Found and fixed various bugs in the parser as a by-product of bachelor's thesis
   - Optimized AST traversing algorithm
   - Automated the release of language specification using Pandoc
 ]
@@ -54,7 +58,7 @@
   end: "Aug, 2020"
 )[
   Internship working on an in-house programming language
-  - Fixed many bugs in various parts in the compiler
+  - Fixed many bugs in various parts of the compiler
   - Implemented algorithm for checking mutability of variables
 ]
 
@@ -70,30 +74,35 @@
 
 #section(icon: "icons/folder-open-solid.svg")[Projects]
 
-[% IF devops %]
+[% IF devops || all %]
 #include "projects/devops.typ"
 [% END %]
-[% IF research %]
+[% IF research || all %]
 #include "projects/research.typ"
 [% END %]
-[% IF web %]
+[% IF web || all %]
 #include "projects/web.typ"
 [% END %]
-[% IF software %]
+[% IF software || all %]
 #include "projects/software.typ"
 [% END %]
-[% IF hardware %]
+[% IF hardware || all %]
 #include "projects/hardware.typ"
 [% END %]
 
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #strong("Programming Languages")\
-Proficient: C, C++, Python, Coq \
-Extensive Use: Haskell, Rust, Javascript, Ruby, Assembly \
-Used: OCaml, Lisp, Java, Scala
+Advanced: C, C++, Python, Coq \
+Proficient: Haskell, Rust, Javascript, Ruby, Assembly \
+Familiar: OCaml, Lisp, Java, Scala
 
 #strong("Frameworks")\
 Ruby on Rails, Vue.js
 
 #strong("Tools")\
 Linux, Nix, Coq, Pandoc, LLVM, Git, SQL Databases, Docker, Redis, Make, Bash, CMake
+
+#section(icon: "icons/language-solid.svg")[Languages]
+English: Fluent(TOEFL 98) \
+Chinese: Native \
+Danish: Beginner \

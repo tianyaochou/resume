@@ -1,12 +1,19 @@
 {
   description = "Resume in Typst";
   inputs.flake-parts.url = "github:hercules-ci/flake-parts";
+  inputs.devshell.url = "github:numtide/devshell";
 
   outputs = inputs@{ nixpkgs, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.devshell.flakeModule
+      ];
       systems =
         [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
       perSystem = { pkgs, ... }: {
+        devshells.default = {
+          packages = with pkgs; [ typst-lsp ];
+        };
         packages = let
           fonts = [
             (pkgs.iosevka-bin.override { variant = "etoile"; })

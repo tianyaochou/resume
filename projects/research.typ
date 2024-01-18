@@ -3,6 +3,7 @@
 #datedItem(
   item: "Formalisation of Simply-Typed Lambda Calculus with Channel",
   subitem: "Coq",
+  url: "https://github.com/tianyaochou/lambda-ch"
 )[
   Course project in Formal Software Verification
   - Operational semantics of simply-typed lambda calculus with channel

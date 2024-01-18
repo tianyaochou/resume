@@ -20,7 +20,7 @@
   subitem: "Rust",
   url: "https://github.com/tianyaochou/search-engine-rs"
 )[
-  - Pipelined and parallel indexer
+  - Pipelined and highly concurrent indexer achieving high CPU utilization and high throughput
   - TF-IDF semantic & boolean search
 ]
 #datedItem(
@@ -30,4 +30,12 @@
   Bachelor's thesis
   - Differential testing on hand-crafted parser
   - Customizable test case generation
+]
+#datedItem(
+  item: "Liu - A RSS aggregator",
+  subitem: "Rust, SQL, Async",
+  url: "https://github.com/tianyaochou/liu"
+)[
+  - Asynchronous operations
+  - Subscribe to RSS/Json feeds
 ]

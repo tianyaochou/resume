@@ -1,8 +1,9 @@
 #import "../template.typ" : *
 
-#datedItem(
-  item: "Minibrutal",
-  subitem: "Jekyll, CSS, HTML"
+#project(
+  name: "Minibrutal",
+  tech: "Jekyll, CSS, HTML",
+  url: "https://github.com/tianyaochou/minibrutal"
 )[
     A brutalist theme for Jekyll based on Minima
 ]

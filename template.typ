@@ -67,13 +67,35 @@
   } else {
     [#start --- #end]    
   }
-  style(styles =>
-    grid(
-      columns: (100% - measure(period, styles).width, auto),
-      column-gutter: auto,
-      itemElement,
-      period
-    )
+  block(
+    breakable: false,
+    {
+      style(styles =>
+        grid(
+          columns: (100% - measure(period, styles).width, auto),
+          column-gutter: auto,
+          itemElement,
+          period
+        )
+      )
+      body
+    }
   )
-  body
+}
+
+#let education(institute: none, degree: none, start: none, end: none, finished: true, description) = {
+  let end = if finished {end} else {end + "(Expected)"};
+  datedItem(item: institute, start: start, end: end)[
+    #degree\
+    #description
+  ]
+}
+
+#let experience(role: none, place: none, start: none, end: none, description) = {
+  let end = if end != none { end } else { "Present" };
+  datedItem(item: role, subitem: place, start: start, end: end, description)
+}
+
+#let project(name: none, tech: none, url: none, description) = {
+  datedItem(item: name, subitem: tech, url: url, description)
 }

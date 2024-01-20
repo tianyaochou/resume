@@ -18,3 +18,12 @@
   - Level 1 cache
   - 2-bit branch prediction
 ]
+#project(
+  name: "NixOS on OrangePi 5 Plus",
+  url: "https://github.com/tianyaochou/orangepi-5-plus-nixos",
+  tech: "Linux, Embeded, Nix",
+)[
+  Ported NixOS to OrangePi 5 Plus with
+  - mainline u-boot
+  - armbian kernel
+]

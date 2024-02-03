@@ -14,7 +14,7 @@
   rows: (auto),
   gutter: 10pt,
   image("image.jpeg", height: auto),
-  align(horizon)[I am a fast learner with a passion for staying at the forefront of new technologies especially related to programming languages. Continuously rethinking about status quo, I actively seek solutions of improvement. In addition to my commitment to innovation, I also pay attention to details. Moreover, I am collaborative and eager to contribute my skills and adaptability to a team that values innovation and embraces positive change.]
+  align(horizon)[I am a fast learner with a passion for staying at the forefront of new technologies especially related to programming languages. Continuously rethinking about status quo, I actively seek solutions of improvement with an analytical mindset and structured approach. In addition to my commitment to innovation, I also pay attention to details. Moreover, I am collaborative and eager to contribute my skills and adaptability to a team that values innovation and embraces positive change.]
 )
 
 #section(icon: "icons/graduation-cap-solid.svg")[Education]
@@ -88,8 +88,8 @@
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #strong("Programming Languages")\
 Advanced: C, C++, Python, Coq \
-Proficient: Haskell, Rust, Javascript, Ruby, Assembly \
-Familiar: OCaml, Lisp, Java, Scala
+Proficient: Haskell, Rust, Javascript, Assembly \
+Familiar: OCaml, Lisp, Java, Scala, Raku, F#
 
 #strong("Frameworks")\
 Ruby on Rails, Vue.js

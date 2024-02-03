@@ -39,3 +39,10 @@
   - Asynchronous operations
   - Subscribe to RSS/Json feeds
 ]
+#project(
+  name: "Lazy TinyML",
+  tech: "F#",
+  url: "https://github.com/tianyaochou/lazy-tinyml"
+)[
+  An interpreter for TinyML with lazy evaluation
+]

@@ -21,17 +21,17 @@
             (pkgs.iosevka-bin.override { variant = "aile"; })
             pkgs.iosevka
           ];
-          fontPaths = builtins.concatStringsSep " " (builtins.map (f: "--font-path " + f) fonts);
+          fontPaths = builtins.concatStringsSep " " (builtins.map (f: "--font-path ${f}") fonts);
           resumeBase = { config ? [ "software" ] }:
             let
               configStr = builtins.concatStringsSep " "
-                (builtins.map (f: "--define " + f + "=true") config);
+                (builtins.map (f: "--metadata " + f + "=true") config);
             in pkgs.stdenv.mkDerivation {
               name = "resume";
-              buildInputs = [ pkgs.typst pkgs.perlPackages.TemplateToolkit ];
+              buildInputs = [ pkgs.typst pkgs.pandoc ];
               src = ./.;
               buildPhase = ''
-                tpage ${configStr} main.typ > resume.typ
+                echo "" | pandoc -f typst -t typst --template main.typ ${configStr} -o resume.typ
                 typst compile ${fontPaths} resume.typ resume.pdf
               '';
               installPhase = ''
@@ -40,7 +40,7 @@
               '';
             };
         in {
-          default = resumeBase { config = [ "all" ]; };
+          default = resumeBase { config = [ "research" "software" "devops" "hardware" "web" ]; };
           resumeAcademic = resumeBase { config = [ "research" ]; };
           resumeDevOps = resumeBase { config = [ "software" "devops" ]; };
         };

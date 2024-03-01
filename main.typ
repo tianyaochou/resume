@@ -28,9 +28,9 @@
   Specialization:
   - Logic, Semantics and Verification
   - Programming Languages and Software Security
-[% IF research || all %]
+  $if(research)$
   Thesis: Contextual Refinement and Nondeterminism
-[% END %]
+  $endif$
 ]
 #education(
   institute: "University of Science and Technology of China(USTC)",
@@ -38,10 +38,10 @@
   start: "Sep, 2017",
   end: "Jul, 2021"
 )[
-[% IF research || all %]
+  $if(research)$
   GPA: 3.33/4.3\
   Thesis: A Parser Test Framework Based on ANTLR
-[% END %]
+  $endif$
 ]
 
 #section(icon: "icons/user-group-solid.svg")[Experiences]
@@ -69,27 +69,27 @@
 
 #section(icon: "icons/folder-open-solid.svg")[Projects]
 
-[% IF devops || all %]
+$if(devops)$
 #include "projects/devops.typ"
-[% END %]
-[% IF research || all %]
+$endif$
+$if(research)$
 #include "projects/research.typ"
-[% END %]
-[% IF web || all %]
+$endif$
+$if(web)$
 #include "projects/web.typ"
-[% END %]
-[% IF software || all %]
+$endif$
+$if(software)$
 #include "projects/software.typ"
-[% END %]
-[% IF hardware || all %]
+$endif$
+$if(hardware)$
 #include "projects/hardware.typ"
-[% END %]
+$endif$
 
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
-#strong("Programming Languages")\
+#strong("Programming Languages") \
 Advanced: C, C++, Python, Coq \
 Proficient: Haskell, Rust, Javascript, Assembly \
-Familiar: OCaml, Lisp, Java, Scala, Raku, F#
+Familiar: OCaml, Lisp, Java, Scala, Raku, F\#
 
 #strong("Frameworks")\
 Ruby on Rails, Vue.js

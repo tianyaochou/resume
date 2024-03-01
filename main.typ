@@ -28,9 +28,9 @@
   Specialization:
   - Logic, Semantics and Verification
   - Programming Languages and Software Security
-  $if(research)$
+$if(research)$
   Thesis: Contextual Refinement and Nondeterminism
-  $endif$
+$endif$
 ]
 #education(
   institute: "University of Science and Technology of China(USTC)",
@@ -38,10 +38,10 @@
   start: "Sep, 2017",
   end: "Jul, 2021"
 )[
-  $if(research)$
+$if(research)$
   GPA: 3.33/4.3\
   Thesis: A Parser Test Framework Based on ANTLR
-  $endif$
+$endif$
 ]
 
 #section(icon: "icons/user-group-solid.svg")[Experiences]
@@ -100,4 +100,4 @@ Linux, Nix, Coq, Pandoc, Latex, Typst, LLVM, Git, SQL Databases, Docker, Redis, 
 #section(icon: "icons/language-solid.svg")[Languages]
 English: Fluent(TOEFL 98) \
 Chinese: Native \
-Danish: Beginner(DU3 Modul 4) \
+Danish: Beginner(DU3 Modul 4)

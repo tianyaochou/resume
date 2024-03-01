@@ -15,7 +15,7 @@
 
   // Title row.
   align(center)[
-    #block(strong(text(weight: "light", 1.75em, name)))
+    #block(strong(text(font: "Iosevka Etoile", weight: "light", 1.75em, name)))
   ]
 
   // Author information.
@@ -39,7 +39,7 @@
 }
 
 #let section(icon: "", body) = {
-  show strong: set text(size: 11pt)
+  show strong: set text(font: "Iosevka Etoile", size: 11pt)
   stack(
     if icon == "" {
       strong(body)

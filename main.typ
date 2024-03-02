@@ -1,103 +1,91 @@
 #import "template.typ": *
 
+#let data = json("resume.json")
+#let me = data.at("profile")
+
 #show: resume.with(
-  name: "Tianyao Zhou",
-  email: "hi@tianyao.ch",
-  phone: "+4555224841",
-  github: "tianyaochou",
-  linkedin: "tianyaochou"
+  name: me.at("name"),
+  email: me.at("email"),
+  phone: me.at("telephone"),
+  github: me.at("github"),
+  linkedin: me.at("linkedin")
 )
 
 #section(icon: "icons/user-solid.svg")[About Me]
 #grid(
-  columns: (1fr, 7fr),
-  rows: (auto),
-  gutter: 10pt,
-  image("image.jpeg", height: auto),
-  align(horizon)[I am a fast learner with a passion for staying at the forefront of new technologies especially related to programming languages. Continuously rethinking about status quo, I actively seek solutions of improvement with an analytical mindset and structured approach. In addition to my commitment to innovation, I also pay attention to details. Moreover, I am collaborative and eager to contribute my skills and adaptability to a team that values innovation and embraces positive change.]
+  columns: 2,
+  gutter: 1em,
+  image("image.jpeg", height: 8em),
+  align(horizon)[I am a fast learner with a passion for staying at the forefront of new technologies. Continuously rethinking about status quo, I actively seek solutions of improvement with an analytical mindset and structured approach. In addition to my commitment to innovation, I also pay attention to details. Moreover, I am collaborative and eager to contribute my skills and adaptability to a team that values innovation and embraces positive change.]
 )
 
 #section(icon: "icons/graduation-cap-solid.svg")[Education]
-#education(
-  institute: "Aarhus University",
-  degree: "MSc. Computer Science",
-  start: "Sep, 2021",
-  end: "Jul, 2023"
-)[
-  GPA: 9.33/12 \
-  Specialization:
-  - Logic, Semantics and Verification
-  - Programming Languages and Software Security
-$if(research)$
-  Thesis: Contextual Refinement and Nondeterminism
-$endif$
-]
-#education(
-  institute: "University of Science and Technology of China(USTC)",
-  degree: "BEng. Computer Science and Technology",
-  start: "Sep, 2017",
-  end: "Jul, 2021"
-)[
-$if(research)$
-  GPA: 3.33/4.3\
-  Thesis: A Parser Test Framework Based on ANTLR
-$endif$
-]
+#let educations = data.at("educations")
+#for edu in educations {
+  education(
+    institute: edu.at("institute"),
+    degree: edu.at("program"),
+    start: edu.at("start"),
+    end: edu.at("end"),
+    eval(edu.at("description"), mode: "markup")
+  )
+}
 
 #section(icon: "icons/user-group-solid.svg")[Experiences]
-#experience(
-  role: "Compiler Engineer",
-  place: "Huawei, Hangzhou",
-  start: "Mar, 2021",
-  end: "Jul, 2021"
-)[
-  Internship working on an in-house programming language
-  - Found and fixed various about 5 bugs in the parser as a by-product of bachelor's thesis
-  - Optimized AST traversing algorithm reducing CI pipeline by 10 minutes
-  - Automated the release of language specification using Pandoc
-]
-#experience(
-  role: "Compiler Engineer",
-  place: "Huawei, Hangzhou",
-  start: "Jul, 2020",
-  end: "Aug, 2020"
-)[
-  Internship working on an in-house programming language
-  - Fixed many bugs(10+) in various parts of the compiler including parser, type checking, code generation and so on
-  - Implemented algorithm for checking mutability of variables
-]
-
-#section(icon: "icons/folder-open-solid.svg")[Projects]
-
-$if(devops)$
-#include "projects/devops.typ"
-$endif$
-$if(research)$
-#include "projects/research.typ"
-$endif$
-$if(web)$
-#include "projects/web.typ"
-$endif$
-$if(software)$
-#include "projects/software.typ"
-$endif$
-$if(hardware)$
-#include "projects/hardware.typ"
-$endif$
+#let experiences = data.at("experiences")
+#for exp in experiences {
+  experience(
+    role: exp.at("role"),
+    place: exp.at("organization") + ", " + exp.at("location"),
+    start: exp.at("start"),
+    end: exp.at("end"),
+    eval(exp.at("description"), mode: "markup")
+  )
+}
 
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
+#let skills = data.at("skills")
 #strong("Programming Languages") \
-Advanced: C, C++, Python, Coq \
-Proficient: Haskell, Rust, Javascript, Assembly \
-Familiar: OCaml, Lisp, Java, Scala, Raku, F\#
+#let pls = skills.at("programming")
+#for (level, pls_) in pls {
+  level + ": "
+  pls_.join(", ")
+  linebreak()
+}
 
-#strong("Frameworks")\
-Ruby on Rails, Vue.js
-
-#strong("Tools")\
-Linux, Nix, Coq, Pandoc, Latex, Typst, LLVM, Git, SQL Databases, Docker, Redis, Make, Bash, CMake
+#strong("Tools") \
+#let tools = skills.at("tools")
+#tools.join(", ")
 
 #section(icon: "icons/language-solid.svg")[Languages]
 English: Fluent(TOEFL 98) \
 Chinese: Native \
 Danish: Beginner(DU3 Modul 4)
+
+#pagebreak()
+
+#section(icon: "icons/folder-open-solid.svg")[Projects]
+#let renderProjects(projects) = {
+  for p in projects {
+    project(
+      name: p.at("name"),
+      tech: p.at("keywords", default: ""),
+      url: p.at("url", default: ""),
+      eval(p.at("description"), mode: "markup")
+    )
+  }
+}
+#let projects = json("projects.json").at("projects")
+$if(software)$
+#let software = projects.at("software")
+#renderProjects(software)
+$endif$
+$if(research)$
+#let research = projects.at("research")
+#renderProjects(research)
+$endif$
+$if(hardware)$
+#let hardware = projects.at("hardware")
+#renderProjects(hardware)
+$endif$
+

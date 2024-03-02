@@ -24,10 +24,10 @@
       columns: (1fr,),
       gutter: 1em,
       align(center)[
-        #box(image("icons/envelope-solid.svg", width: 0.9em), baseline: 0.1em) #link("mailto:" + email)[#email] $dot$
-        #box(image("icons/phone-solid.svg", width: 0.9em), baseline: 0.1em) #phone $dot$
-        #box(image("icons/github.svg", width: 0.9em), baseline: 0.1em) #link("https://github.com/" + github)[#github] $dot$
-        #box(image("icons/linkedin.svg", width: 0.9em), baseline: 0.175em) #link("https://www.linkedin.com/in/" + linkedin)[#linkedin]
+        #box(image("icons/envelope-solid.svg", fit: "contain"), height: 1em, baseline: 0.2em) #link("mailto:" + email)[#email] $dot$
+        #box(image("icons/phone-solid.svg", fit: "contain"), height: 1em, baseline: 0.1em) #phone $dot$
+        #box(image("icons/github.svg", fit: "contain"), height: 1em, baseline: 0.15em) #link("https://github.com/" + github)[#github] $dot$
+        #box(image("icons/linkedin.svg", fit: "contain"), height: 1em, baseline: 0.15em) #link("https://www.linkedin.com/in/" + linkedin)[#linkedin]
       ],
     ),
   )
@@ -39,12 +39,12 @@
 }
 
 #let section(icon: "", body) = {
-  show strong: set text(font: "Iosevka Etoile", size: 11pt)
+  set text(font: "Iosevka Etoile", size: 12pt)
   stack(
     if icon == "" {
       strong(body)
     } else {
-      [#box(image(icon, height: 1em, width: 1.2em, fit: "contain"), baseline: 0.15em) #strong(body)]
+      [#box(image(icon, fit: "contain"), height: 1em, baseline: 0.1em) #strong(body)]
     },
     v(0.5em),
     line(length: 100%)

@@ -84,11 +84,45 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1707521206,
+        "narHash": "sha256-bDYHFafZX4DY6ZSF4jJ0Ls10OOWHVtMMk2nYIb7CKdM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e9b728e4fdbd2efee1eebad2e6e591b253e7b2f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "pkl-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
+      },
+      "locked": {
+        "lastModified": 1707674135,
+        "narHash": "sha256-HzPffupj7fizZ4WFFtusIpuix9FCrWaKiMneoy6Ck1Q=",
+        "owner": "capslock",
+        "repo": "pkl-flake",
+        "rev": "44fb989462ab91c7511fd608b871c433ed2b2447",
+        "type": "github"
+      },
+      "original": {
+        "owner": "capslock",
+        "repo": "pkl-flake",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "devshell": "devshell",
         "flake-parts": "flake-parts",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "pkl-nix": "pkl-nix"
       }
     },
     "systems": {

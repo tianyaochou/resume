@@ -1,0 +1,86 @@
+profile {
+  name = "Tianyao Zhou"
+  email = "hi@tianyao.ch"
+  telephone = "+4555224841"
+  github = "tianyaochou"
+  linkedin = "tianyaochou"
+}
+
+educations {
+  new {
+    institute = "Aarhus University"
+    program = "MSc. Computer Science"
+    start = "Sep, 2021"
+    end = "Jul, 2023"
+    description = """
+      GPA: 9.33/12 \\
+      Specialization:
+      - Logic, Semantics and Verification
+      - Programming Languages and Software Security
+      Thesis: Contextual Refinement and Nondeterminism
+      """
+  }
+  new {
+    institute = "University of Science and Technology of China"
+    program = "BEng. Computer Science and Technology"
+    start = "Sep, 2017"
+    end = "Jul, 2021"
+    description = """
+      GPA: 3.33/4.3\\
+      Thesis: A Parser Test Framework Based on ANTLR
+      """
+  }
+}
+
+experiences {
+  new {
+    role = "Compiler Engineer"
+    organization = "Huawei"
+    location = "Hangzhou"
+    start = "Mar, 2021"
+    end = "Jul, 2021"
+    description = """
+      Internship working on an in-house programming language
+      - Found and fixed various about 5 bugs in the parser as a by-product of bachelor's thesis
+      - Optimized AST traversing algorithm reducing CI pipeline by 10 minutes
+      - Automated the release of language specification using Pandoc
+      """
+  }
+  new {
+    role = "Compiler Engineer"
+    organization = "Huawei"
+    location = "Hangzhou"
+    start = "Jul, 2020"
+    end = "Aug, 2020"
+    description = """
+      Internship working on an in-house programming language
+      - Fixed many bugs(10+) in various parts of the compiler including parser, type checking, code generation and so on
+      - Implemented algorithm for checking mutability of variables
+      """
+  }
+}
+
+skills {
+  programming {
+    `Proficient` {
+      "C" "C++" "Haskell" "Rust" "Coq" "Python" "Javascript" "Assembly"
+    }
+    `Familiar` {
+      "F#" "Scala" "Lisp" "Java" "Raku"
+    }
+  }
+  tools {
+    "Linux" "Nix" "NixOS" "Pandoc" "Latex" "Typst" "LLVM" "Git" "SQL Databases" "Docker" "Redis"
+  }
+}
+
+languages {
+  English = "Proficient(TOFEL 98)"
+  Chinese {
+    Reading = "Simplified & Traditional"
+    Writing = "Simplified"
+    Listening = "Mandarin, Cantonese"
+    Speaking = "Mandarin"
+  }
+  Danish = "Beginner(DU3 Modul 4)"
+}

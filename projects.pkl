@@ -1,0 +1,118 @@
+projects {
+  research {
+    new {
+      name = "Formalisation of Simply-Typed Lambda Calculus with Channel"
+      keywords = "Coq"
+      url = "https://github.com/tianyaochou/lambda-ch"
+      description = """
+        Course project in Formal Software Verification
+        - Operational semantics of simply-typed lambda calculus with channel
+        - Proof of preservation and weak progress theorem
+        """
+    }
+    new {
+      name = "Case study on Nonmalleability"
+      description = "Course project in Language-based Security with Félix Ridoux"
+    }
+    new {
+      name = "Verification of Auction Smart Contract"
+      keywords = "Coq"
+      description = "Course project in Advanced Topics in Programming Language Theory with with Andreas Stenbæk Larsen"
+    }
+    new {
+      name = "Contextual Refinement and Nondeterminism"
+      keywords = "Coq, Iris"
+      description = """
+        Master's thesis
+        - Proof of contextual refinement between a fine-grained queue and a coarse-grained one
+        - Multirelation semantics of angelic and demonic nondeterministic programming languages
+        - Logical relation to prove contextual refinement between programs with only angelic nondeterminism
+        """
+    }
+  }
+  software {
+    new {
+      name = "Dotfiles"
+      keywords = "Nix, NixOS, IaC"
+      url = "https://github.com/tianyaochou/dotfiles"
+      description = """
+        Modulised Configuration and Infrastructure as Code for my computers and servers
+        - Modulised configuration of development systems and tools
+        - Declarative and deterministic deployments of machines
+        """
+    }
+    new {
+      name = "Student Management System"
+      keywords = "Ruby on Rails, SQL"
+      description = """
+        - RESTful API with query
+        - Web interface for management
+        """
+    }
+    new {
+      name = "Search Engine"
+      keywords = "Rust"
+      url = "https://github.com/tianyaochou/search-engine-rs"
+      description = """
+        - Pipelined and highly concurrent indexer achieving high CPU utilization and high throughput
+        - TF-IDF semantic & boolean search
+        """
+    }
+    new {
+      name = "A Parser Testing Framework Based on ANTLR"
+      keywords = "C++"
+      description = """
+        Bachelor's thesis
+        - Differential testing on hand-crafted parser
+        - Customizable test case generation
+        """
+    }
+    new {
+      name = "Liu - A RSS aggregator"
+      keywords = "Rust, SQL, Async"
+      url = "https://github.com/tianyaochou/liu"
+      description = """
+        - Asynchronous operations
+        - Subscribe to RSS/Json feeds
+        """
+    }
+    new {
+      name = "Lazy TinyML"
+      keywords = "F#"
+      url = "https://github.com/tianyaochou/lazy-tinyml"
+      description = "An interpreter for TinyML with lazy evaluation"
+    }
+  }
+  hardware {
+    new {
+      name = "MIPS CPU"
+      keywords = "CHISEL, FPGA"
+      url = "https://github.com/tianyaochou/mips32-chisel"
+      description = """
+        5-stages multi-cycle MIPS CPU on FPGA
+        - Support basic subset of MIPS
+        - Memory-mapped VGA video output
+        - Paint program that draw with up/down/left/right buttons with color selection
+      """
+    }
+    new {
+      name = "Pipelined RISC-V CPU"
+      keywords = "Verilog, FPGA"
+      description = """
+        5-stage Pipelined RV32I CPU on FPGA
+        - Level 1 cache
+        - 2-bit branch prediction
+        """
+    }
+    new {
+      name = "NixOS on OrangePi 5 Plus"
+      keywords = "Linux, Embeded, Nix"
+      url = "https://github.com/tianyaochou/orangepi-5-plus-nixos"
+      description = """
+        Ported NixOS to OrangePi 5 Plus with
+        - mainline u-boot
+        - armbian kernel
+        """
+    }
+  }
+}

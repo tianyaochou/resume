@@ -23,11 +23,10 @@
             pkgs.iosevka
           ];
           fontPaths = builtins.concatStringsSep " " (builtins.map (f: "--font-path ${f}") fonts);
+          pkl = "${inputs'.pkl-nix.packages.pkl}/bin/pkl-cli";
           resumeBase = { config ? [ "software" ] }:
-            let
-              configStr = builtins.concatStringsSep " "
-                (builtins.map (f: "--metadata " + f + "=true") config);
-              pkl = "${inputs'.pkl-nix.packages.pkl}/bin/pkl-cli";
+            let configStr = builtins.concatStringsSep " "
+              (builtins.map (f: "--metadata " + f + "=true") config);
             in pkgs.stdenv.mkDerivation {
               name = "resume";
               buildInputs = [ pkgs.typst pkgs.pandoc ];
@@ -35,12 +34,6 @@
               pkl = pkl;
               configStr = configStr;
               fontPaths = fontPaths;
-              # buildPhase = ''
-              #   ${pkl} eval -f json resume.pkl -o resume.json
-              #   ${pkl} eval -f json projects.pkl -o projects.json
-              #   echo "" | pandoc -f typst -t typst --template main.typ ${configStr} -o resume.typ
-              #   typst compile ${fontPaths} resume.typ resume.pdf
-              # '';
               installPhase = ''
                 mkdir $out
                 cp resume.pdf $out
@@ -50,6 +43,16 @@
           default = resumeBase { config = [ "research" "software" "devops" "hardware" "web" ]; };
           resumeAcademic = resumeBase { config = [ "research" ]; };
           resumeDevOps = resumeBase { config = [ "software" "devops" ]; };
+          resumeJson = pkgs.stdenv.mkDerivation {
+            name = "resume-json";
+            src = ./.;
+            pkl = pkl;
+            buildPhase = "make resume.json";
+            installPhase = ''
+              mkdir $out
+              cp resume.json $out
+            '';
+          };
         };
       };
     };

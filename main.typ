@@ -75,7 +75,7 @@ Danish: Beginner(DU3 Modul 4)
     )
   }
 }
-#let projects = json("projects.json").at("projects")
+#let projects = data.at("projects")
 $if(software)$
 #let software = projects.at("software")
 #renderProjects(software)

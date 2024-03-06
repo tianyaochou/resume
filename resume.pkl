@@ -60,6 +60,8 @@ experiences {
   }
 }
 
+projects = import("projects.pkl").projects
+
 skills {
   programming {
     `Proficient` {

@@ -42,14 +42,6 @@ projects {
         """
     }
     new {
-      name = "Student Management System"
-      keywords = "Ruby on Rails, SQL"
-      description = """
-        - RESTful API with query
-        - Web interface for management
-        """
-    }
-    new {
       name = "Search Engine"
       keywords = "Rust"
       url = "https://github.com/tianyaochou/search-engine-rs"
@@ -81,6 +73,12 @@ projects {
       keywords = "F#"
       url = "https://github.com/tianyaochou/lazy-tinyml"
       description = "An interpreter for TinyML with lazy evaluation"
+    }
+    new {
+      name = "hakyll-ede"
+      keywords = "Haskell"
+      url = "https://github.com/tianyaochou/hakyll-ede"
+      description = "Use ede template in Hakyll"
     }
   }
   hardware {

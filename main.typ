@@ -46,6 +46,8 @@
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #let skills = data.at("skills")
 #strong("Programming Languages") \
+Multilingual, able to adapt to any language, but mainly:
+
 #let pls = skills.at("programming")
 #for (level, pls_) in pls {
   level + ": "

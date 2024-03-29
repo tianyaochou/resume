@@ -80,6 +80,12 @@ projects {
       url = "https://github.com/tianyaochou/hakyll-ede"
       description = "Use ede template in Hakyll"
     }
+    new {
+      name = "lsnip"
+      keywords = "Haskell, Language Server Protocol"
+      url = "https://github.com/tianyaochou/lsnip"
+      description = "An LSP Server providing custom snippets"
+    }
   }
   hardware {
     new {
@@ -100,16 +106,6 @@ projects {
         5-stage Pipelined RV32I CPU on FPGA
         - Level 1 cache
         - 2-bit branch prediction
-        """
-    }
-    new {
-      name = "NixOS on OrangePi 5 Plus"
-      keywords = "Linux, Embeded, Nix"
-      url = "https://github.com/tianyaochou/orangepi-5-plus-nixos"
-      description = """
-        Ported NixOS to OrangePi 5 Plus with
-        - mainline u-boot
-        - armbian kernel
         """
     }
   }

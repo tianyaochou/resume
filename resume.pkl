@@ -34,7 +34,7 @@ educations {
 
 experiences {
   new {
-    role = "Compiler Engineer"
+    role = "Compiler Engineer(C++)"
     organization = "Huawei"
     location = "Hangzhou"
     start = "Mar, 2021"
@@ -47,7 +47,7 @@ experiences {
       """
   }
   new {
-    role = "Compiler Engineer"
+    role = "Compiler Engineer(C++)"
     organization = "Huawei"
     location = "Hangzhou"
     start = "Jul, 2020"
@@ -65,14 +65,14 @@ projects = import("projects.pkl").projects
 skills {
   programming {
     `Proficient` {
-      "C" "C++" "Haskell" "Rust" "Coq" "Python" "Javascript" "Assembly"
+      "C" "C++" "Haskell" "Rust" "Coq" "Python" "Typescript/Javascript" "Assembly"
     }
     `Familiar` {
-      "F#" "Scala" "Lisp" "Java" "Raku"
+      "F# and .NET" "Scala" "Lisp" "Java" "Raku" "Verilog"
     }
   }
   tools {
-    "Linux" "Nix" "NixOS" "Pandoc" "Latex" "Typst" "LLVM" "Git" "SQL Databases" "Docker" "Redis"
+    "Linux" "Nix" "NixOS" "Pandoc" "Latex" "Typst" "LLVM" "Git" "SQL Databases" "Docker" "Redis" "CMake" "Shell" "Elm"
   }
 }
 

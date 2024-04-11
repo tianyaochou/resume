@@ -16,7 +16,7 @@
   columns: 2,
   gutter: 1em,
   image("image.jpeg", height: 8em),
-  align(horizon)[I am a fast learner with a passion for staying at the forefront of new technologies. Continuously rethinking about status quo, I actively seek solutions of improvement with an analytical mindset and structured approach. In addition to my commitment to innovation, I also pay attention to details. Moreover, I am collaborative and eager to contribute my skills and adaptability to a team that values innovation and embraces positive change.]
+  align(horizon)[I am a fast learner with a passion for exploring new technologies and evaluating them in practice. Continuously rethinking about the status quo, I actively seek solutions of improvement with an analytical mindset, and I am ready to tackle unknown technological difficulties with structured approach and deliver results. In addition, I also pay attention to details. Moreover, I am collaborative and a team player, valuing diverse perspectives.]
 )
 
 #section(icon: "icons/graduation-cap-solid.svg")[Education]
@@ -46,7 +46,7 @@
 #section(icon: "icons/screwdriver-wrench-solid.svg")[Skills]
 #let skills = data.at("skills")
 #strong("Programming Languages") \
-Multilingual, able to adapt to any language, but mainly:
+Multilingual, able to adapt to any language including C\#, but mainly:
 
 #let pls = skills.at("programming")
 #for (level, pls_) in pls {
@@ -55,7 +55,7 @@ Multilingual, able to adapt to any language, but mainly:
   linebreak()
 }
 
-#strong("Tools") \
+#strong("Tools and Frameworks") \
 #let tools = skills.at("tools")
 #tools.join(", ")
 
@@ -69,25 +69,20 @@ Danish: Beginner(DU3 Modul 4)
 #section(icon: "icons/folder-open-solid.svg")[Projects]
 #let renderProjects(projects) = {
   for p in projects {
-    project(
-      name: p.at("name"),
-      tech: p.at("keywords", default: ""),
-      url: p.at("url", default: ""),
-      eval(p.at("description"), mode: "markup")
-    )
+    if not p.at("hide", default: false) {
+      project(
+        name: p.at("name"),
+        tech: p.at("keywords", default: ""),
+        url: p.at("url", default: ""),
+        eval(p.at("description"), mode: "markup")
+      )
+    }
   }
 }
 #let projects = data.at("projects")
-$if(software)$
 #let software = projects.at("software")
 #renderProjects(software)
-$endif$
-$if(research)$
 #let research = projects.at("research")
 #renderProjects(research)
-$endif$
-$if(hardware)$
 #let hardware = projects.at("hardware")
 #renderProjects(hardware)
-$endif$
-

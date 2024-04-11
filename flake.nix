@@ -13,7 +13,10 @@
         [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
       perSystem = { pkgs, inputs', ... }: {
         devshells.default = {
-          packages = with pkgs; [ typst-lsp ];
+          packages = with pkgs; [ typst-lsp inputs'.pkl-nix.packages.pkl gnumake ];
+          serviceGroups.watch.services.watch = {
+            command = "ls *.typ *.pkl | entr -n make";
+          };
         };
         packages = let
           fonts = [
@@ -29,7 +32,7 @@
               (builtins.map (f: "--metadata " + f + "=true") config);
             in pkgs.stdenv.mkDerivation {
               name = "resume";
-              buildInputs = [ pkgs.typst pkgs.pandoc ];
+              buildInputs = [ pkgs.typst pkgs.pandoc inputs'.pkl-nix.packages.pkl ];
               src = ./.;
               pkl = pkl;
               configStr = configStr;
@@ -46,7 +49,6 @@
           resumeJson = pkgs.stdenv.mkDerivation {
             name = "resume-json";
             src = ./.;
-            pkl = pkl;
             buildPhase = "make resume.json";
             installPhase = ''
               mkdir $out
